@@ -14,23 +14,21 @@ struct FrameworkGridView: View {
     var body: some View {
         
         NavigationView {
-            ScrollView {
-                LazyVGrid(columns: gridViewModel.coloumns) {
-                    ForEach(MockData.frameworks) { framework in
+            List {
+                ForEach(MockData.frameworks) { framework in
+                    
+                    NavigationLink(destination:
+                                    FrameworkDetailedView(
+                                        framework: framework,
+                                        isFrameworkSelected: $gridViewModel.isFrameworkSelected))
+                    {
                         FrameworkTileView(framework: framework)
-                            .onTapGesture {
-                                gridViewModel.selectedFramework = framework
-                            }
                     }
                 }
             }
-            .navigationTitle("Frameworks")
-            .fullScreenCover(isPresented: $gridViewModel.isFrameworkSelected) {
-                FrameworkDetailedView(
-                    framework: gridViewModel.selectedFramework ?? MockData.sampleFramework,
-                    isFrameworkSelected: $gridViewModel.isFrameworkSelected)
-            }
+            .navigationTitle("🍎 Frameworks")
         }
+        .accentColor(Color(.label))
     }
 }
 

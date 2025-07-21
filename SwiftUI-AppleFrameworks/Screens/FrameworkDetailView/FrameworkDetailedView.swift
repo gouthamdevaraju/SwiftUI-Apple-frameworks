@@ -16,7 +16,7 @@ struct FrameworkDetailedView: View {
     var body: some View {
         VStack {
             
-            ExButtonView(isShowingBindingView: $isFrameworkSelected)
+//            ExButtonView(isShowingBindingView: $isFrameworkSelected)
             
             Spacer()
             
