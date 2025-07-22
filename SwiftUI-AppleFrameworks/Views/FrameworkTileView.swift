@@ -13,7 +13,7 @@ struct FrameworkTileView: View {
     
     var body: some View {
         
-        HStack {
+        VStack {
             
             Image(framework.imageName)
                 .resizable()

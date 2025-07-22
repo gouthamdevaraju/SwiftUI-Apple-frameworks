@@ -10,7 +10,7 @@ import SwiftUI
 struct FrameworkDetailedView: View {
     
     var framework: Framework
-    @Binding var isFrameworkSelected: Bool
+//    @Binding var isFrameworkSelected: Bool
     @State private var isLearnMoreTapped = false
     
     var body: some View {
@@ -52,6 +52,6 @@ struct FrameworkDetailedView: View {
 
 struct FrameworkDetailedView_Preview: PreviewProvider {
     static var previews: some View {
-        FrameworkDetailedView(framework: MockData.sampleFramework, isFrameworkSelected: .constant(true))
+        FrameworkDetailedView(framework: MockData.sampleFramework)
     }
 }
